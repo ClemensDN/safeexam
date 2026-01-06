@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Download</title>
+
+<style>
+:root {
+    --violet: #6f63c6;
+    --violet-light: #f4f3fb;
+    --border: #e2e0f2;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: var(--violet-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.box {
+    background: white;
+    padding: 40px;
+    border-radius: 14px;
+    width: 360px;
+    text-align: center;
+    border: 1px solid var(--border);
+}
+
+h2 {
+    color: var(--violet);
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+a {
+    display: block;
+    padding: 14px;
+    background: var(--violet);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: background 0.2s ease;
+}
+
+a:hover {
+    background: #5d52b3;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Download bereit</h2>
+    <a href="datei" download onclick="closeAfterDownload()">ZIP herunterladen</a>
+</div>
+
+<script>
+function closeAfterDownload() {
+    setTimeout(() => {
+        // Versuch, das Fenster zu schließen
+        window.close();
+
+        // Fallback: Seite unbrauchbar machen
+        document.body.innerHTML = "<h2>Download gestartet</h2><p>Dieses Fenster kann jetzt geschlossen werden.</p>";
+    }, 3000);
+}
+</script>
+</body>
+</html>
